@@ -1,0 +1,96 @@
+---
+title: "q1"
+author: "Bruna"
+date: "2024-09-04"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+library(MASS)
+library(tidyverse)
+library(readxl)
+library(DescTools)
+#library(xlsx)
+library(gridExtra)
+#library(alr3)
+#library(fpp2)
+library(lubridate)
+library(scales)
+library(ggthemes)
+library(reshape2)
+#library(zoo)
+library(matrixStats)
+library(nortest)
+#library(googlesheets)
+library(prettyunits)
+library(utils)
+library(qcc)
+library(disk.frame)
+library(arrow)
+library(dbscan)
+library(forecast)
+```
+
+## R Markdown
+
+This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word 
+![pot1](C:/Users/bkfro/Documents/sep2_manual/eq_pot.png)
+![pt2](C:/Users/bkfro/Documents/sep2_manual/eq_pot2.png)
+```{r cars}
+summary(cars)
+```
+
+## Including Plots
+![pt2](C:/Users/bkfro/Documents/sep2_manual/metodo_gen_new_raph1.png)
+![pt2](C:/Users/bkfro/Documents/sep2_manual/metodo_gen_new_raph2.png)
+![pt2](C:/Users/bkfro/Documents/sep2_manual/new_rap_eq.png)
+![pt2](C:/Users/bkfro/Documents/sep2_manual/expliq.png)
+Sistema com 3 barras, e ref e 2 PQ
+![pt2](C:/Users/bkfro/Documents/sep2_manual/3_barras_pq.png)
+
+
+![pt2](C:/Users/bkfro/Documents/sep2_manual/generico.png)
+
+![pt2](C:/Users/bkfro/Documents/sep2_manual/itens_jacobiano.png)
+
+![pt2](C:/Users/bkfro/Documents/sep2_manual/atual_v_teta.png)
+
+
+
+
+```{r}
+#Dados
+x12 <- 0.5i
+x13 <- 0.2i
+x23 <- 0.25i
+
+v1 <-1
+t1<-0 #theta
+v2<-1
+p2<- 60/100
+p3<- 80/100
+q3<-60/100
+
+#flat start
+t2 =0
+v3= 0
+t3= 0
+
+
+#reatancia para admitancia
+yy12<- 1/x12
+yy13<-1/x13
+yy23 <- 1/x23
+
+#matriz de admitancia
+
+y11<- yy12 + yy13
+y12 =y21 <- (-yy12)
+y13 = y31<- (-yy13)
+y22<- (yy12+yy23)
+y23=y32 <- (-yy23)
+y33<- yy13+yy23
+
+```
+
+
